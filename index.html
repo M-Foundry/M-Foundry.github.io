@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f3ed">
+    <meta name="description" content="M-Foundry 是独立开发者 MRoldL001 的产品集。从原生 Android AI 聊天客户端 MChat，到 Markdown、LaTeX 与代码渲染库 M3L。">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="M-Foundry">
+    <meta property="og:description" content="从 MChat 到 M3L，探索 M-Foundry 的开源产品与工具。">
+    <title>M-Foundry</title>
+    <link rel="icon" href="assets/M-FoundryTM.png" type="image/png">
+    <script>if ('scrollRestoration' in history) history.scrollRestoration = 'manual';</script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main" data-i18n="skipLink"></a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="M-Foundry，返回顶部" data-i18n-aria="brandAria">
+        <img class="brand-icon" src="assets/M-FoundryTM.png" alt="" aria-hidden="true" width="1024" height="1024">
+        <span>M-Foundry</span>
+      </a>
+      <nav class="nav" aria-label="主导航" data-i18n-aria="navAria">
+        <a class="nav-button nav-external" href="https://github.com/M-Foundry" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <button class="nav-button theme-toggle" id="theme-toggle" type="button" aria-label="切换到暗黑模式">☾</button>
+        <button class="nav-button language-toggle" id="language-toggle" type="button" aria-label="Switch to English" lang="en">EN</button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero section-shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title"><span data-i18n="heroFirst"></span><br><span class="hero-line-accent" data-i18n="heroSecond"></span><span class="hero-cursor" aria-hidden="true">_</span></h1>
+          <p class="hero-intro"><span data-i18n="heroIntroBefore"></span><a class="text-link author-link" href="https://github.com/MRoldL001" target="_blank" rel="noopener noreferrer">MRoldL001<span class="link-arrow" aria-hidden="true">↗</span></a><span data-i18n="heroIntroAfter"></span></p>
+          <div class="hero-actions">
+            <a class="button" href="#work"><span data-i18n="exploreProjects"></span><span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-grid" aria-hidden="true"></div>
+          <svg class="art-blueprint" viewBox="0 0 600 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="currentColor" stroke-width="1">
+              <path class="blueprint-axis" d="M300 0v720M0 360h600" stroke-dasharray="9 7"/>
+              <circle class="blueprint-guide" cx="300" cy="360" r="225"/>
+              <circle class="blueprint-guide blueprint-dashed" cx="300" cy="360" r="182" stroke-dasharray="5 9"/>
+              <path class="blueprint-guide" d="M120 130h360v460H120z" stroke-dasharray="12 8"/>
+              <path class="blueprint-dimension" d="M120 102h360M120 93v18M480 93v18M90 130v460M81 130h18M81 590h18M512 130v460M503 130h18M503 590h18"/>
+              <path class="blueprint-mark" d="M300 118v25m-12-12h24M300 577v25m-12-12h24M63 360h28m-14-14v28M509 360h28m-14-14v28"/>
+              <path class="blueprint-mark" d="M37 37h30M37 37v30M563 37h-30M563 37v30M37 683h30M37 683v-30M563 683h-30M563 683v-30"/>
+            </g>
+          </svg>
+          <img class="art-symbol" src="assets/M-FoundryTM.png" alt="" width="1024" height="1024" draggable="false">
+        </div>
+      </section>
+
+      <section class="work section-shell" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="work-title" data-i18n="workTitle"></h2>
+          </div>
+        </div>
+
+        <div class="project-list">
+          <article class="project-card project-chat" aria-labelledby="chat-title">
+            <div class="project-content">
+              <div class="project-logo"><img class="frame-image" src="assets/mchat-title.jpg" alt="MChat 标识" data-i18n-alt="chatLogoAlt" loading="lazy" width="3183" height="1250"></div>
+              <div class="project-body">
+                <h3 id="chat-title"><span data-i18n="chatTitleFirst" lang="en"></span><br class="mobile-break"> <span data-i18n="chatTitleSecond"></span></h3>
+                <p data-i18n="chatDescription"></p>
+                <ul class="tag-list" aria-label="MChat 功能" data-i18n-aria="chatFeaturesAria">
+                  <li data-i18n="chatTagMaterialYou"></li><li data-i18n="chatTagMultimodal"></li><li data-i18n="chatTagLatex"></li><li data-i18n="chatTagCode"></li>
+                </ul>
+                <div class="project-actions">
+                  <a class="button" href="https://github.com/M-Foundry/MChat/releases" target="_blank" rel="noopener noreferrer"><span data-i18n="getChat"></span><span aria-hidden="true">↗</span></a>
+                  <a class="text-link project-source" href="https://github.com/M-Foundry/MChat" target="_blank" rel="noopener noreferrer"><span data-i18n="viewSource"></span><span class="link-arrow" aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-visual chat-visual" role="img" aria-label="MChat 应用截图" data-i18n-aria="chatVisualAria">
+              <div class="project-preview phone-shell" aria-hidden="true">
+                <div class="phone-screen">
+                  <img class="frame-image phone-screenshot" src="assets/mchat.jpg" alt="" loading="lazy" width="864" height="1920">
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-m3l" aria-labelledby="m3l-title">
+            <div class="project-content">
+              <div class="project-logo"><img class="frame-image" src="assets/m3l-title.jpg" alt="M3L 标识" data-i18n-alt="m3lLogoAlt" loading="lazy" width="3183" height="1250"></div>
+              <div class="project-body">
+                <h3 id="m3l-title"><span data-i18n="m3lTitleFirst" lang="en"></span><br class="mobile-break"> <span data-i18n="m3lTitleSecond"></span></h3>
+                <p data-i18n="m3lDescription"></p>
+                <ul class="tag-list" aria-label="M3L 功能" data-i18n-aria="m3lFeaturesAria">
+                  <li>Markdown+LaTeX</li><li data-i18n="m3lTagHighlight"></li><li data-i18n="m3lTagStreaming"></li><li data-i18n="m3lTagTheme"></li>
+                </ul>
+                <div class="project-actions">
+                  <a class="button" href="https://jitpack.io/#M-Foundry/MMixedMarkdownLatex" target="_blank" rel="noopener noreferrer"><span data-i18n="exploreM3l"></span><span aria-hidden="true">↗</span></a>
+                  <a class="text-link project-source" href="https://github.com/M-Foundry/MMixedMarkdownLatex" target="_blank" rel="noopener noreferrer"><span data-i18n="quickStart"></span><span class="link-arrow" aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </div>
+            <div class="project-visual m3l-visual" aria-label="Markdown、公式与代码渲染插画" data-i18n-aria="m3lVisualAria">
+              <div class="project-preview render-window" aria-hidden="true">
+                <div class="render-toolbar"><span class="window-dots"><i></i><i></i><i></i></span><span>MixedMarkdownLatex.kt</span><span>↗</span></div>
+                <div class="render-body">
+                  <img class="frame-image m3l-screenshot" src="assets/m3l.jpg" alt="M3L 渲染效果截图" data-i18n-alt="m3lScreenshotAlt" loading="lazy" width="1429" height="1455">
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer section-shell">Copyright © 2026 by M-Foundry All Rights Reserved.</footer>
+    <script src="script.js" defer></script>
+  </body>
+</html>
