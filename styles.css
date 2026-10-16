@@ -67,6 +67,7 @@ button{font:inherit}
 .nav-button{display:inline-flex;align-items:center;justify-content:center;min-width:51px;min-height:37px;padding:0 10px;border:1px solid var(--ink);border-radius:4px;background:transparent;color:var(--ink);font-size:12px;font-weight:700;cursor:pointer;transition:background-color .2s ease}
 .nav-button:hover{background:var(--nav-hover)}
 .nav-external span{margin-left:10px}
+.github-icon{display:none;flex:none}
 .hero{display:grid;grid-template-columns:1.06fr .94fr;grid-template-rows:minmax(640px,auto);gap:0 6%;padding:26px 0 55px;border-bottom:1px solid var(--line)}
 .hero-copy{padding:112px 0 86px;align-self:center}
 h1,h2,h3,p{margin-top:0}
@@ -89,8 +90,8 @@ h1 .hero-line-accent{color:var(--hero-accent)}
 :root.theme-ready .button{transition:transform .2s ease,--button-theme-progress .25s ease}
 .button:hover{transform:translateY(-3px)}
 .button>span{color:inherit}
-.hero-art{--tilt-duration:.35s;--tilt-easing:ease;position:relative;overflow:hidden;margin:17px 0 0;min-height:0;aspect-ratio:1;background:var(--lime);border-radius:5px;display:flex;align-items:center;justify-content:center;align-self:center;transform:perspective(900px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transform-origin:center;transform-style:preserve-3d;transition:transform var(--tilt-duration) var(--tilt-easing)}
-.hero-art.is-pressing{--tilt-duration:.08s;--tilt-easing:linear;cursor:grabbing}
+.hero-art{--tilt-duration:.35s;--tilt-easing:ease;position:relative;overflow:hidden;margin:17px 0 0;min-height:0;aspect-ratio:1;background:var(--lime);border-radius:5px;display:flex;align-items:center;justify-content:center;align-self:center;transform:perspective(900px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));transform-origin:center;transform-style:preserve-3d;transition:transform var(--tilt-duration) var(--tilt-easing);touch-action:none;cursor:grab}
+.hero-art.is-pressing{--tilt-duration:0s;--tilt-easing:linear;cursor:grabbing}
 .art-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(34,53,9,.065) 1px,transparent 1px),linear-gradient(90deg,rgba(34,53,9,.065) 1px,transparent 1px),linear-gradient(rgba(34,53,9,.16) 1px,transparent 1px),linear-gradient(90deg,rgba(34,53,9,.16) 1px,transparent 1px);background-size:13px 13px,13px 13px,52px 52px,52px 52px}
 .art-blueprint{position:absolute;inset:0;width:100%;height:100%;color:#344b0b;pointer-events:none}.blueprint-axis{opacity:.19}.blueprint-guide{opacity:.24}.blueprint-dashed{opacity:.31}.blueprint-dimension{opacity:.36}.blueprint-mark{opacity:.48}
 .art-symbol{position:relative;z-index:1;width:min(80%,500px);height:auto;transform:translate3d(var(--parallax-x,0px),var(--parallax-y,0px),35px) scale(1.015) rotate(-8deg);transition:transform var(--tilt-duration) var(--tilt-easing),filter var(--tilt-duration) var(--tilt-easing);filter:drop-shadow(var(--shadow-x,17px) var(--shadow-y,18px) 0 rgba(19,25,9,.13)) drop-shadow(var(--shadow-soft-x,21px) var(--shadow-soft-y,24px) var(--shadow-blur,10px) rgba(19,25,9,.13))}
@@ -150,17 +151,17 @@ h3:lang(en),h3 :lang(en){letter-spacing:normal}
   .nav{gap:10px;font-size:12px}
   .nav-button{min-height:34px}
   .hero{display:flex;flex-direction:column;padding:0 0 50px}
-  .hero-copy{width:100%;min-width:0;padding:68px 0 54px}
+  .hero-copy{width:100%;min-width:0;padding:28px 0 54px}
   h1{font-size:clamp(60px,12vw,92px);margin:24px 0}
   .hero-art{margin:0}
   .art-symbol{width:min(84%,360px)}
   .work{padding-top:90px}
-  .section-heading{margin-bottom:28px}
+  .section-heading{margin-bottom:96px}
   .project-list{gap:96px}
-  .project-card{display:flex;flex-direction:column;min-height:0;overflow:hidden}
-  .project-content{flex:1;min-height:410px;padding:24px 29px;border-radius:7px 7px 0 0}
-  .project-visual{flex:none;min-height:515px;border-radius:0 0 7px 7px;clip-path:inset(0 round 0 0 7px 7px)}
-  .project-preview{top:50%}
+  .project-card{display:flex;flex-direction:column;min-height:0}
+  .project-content{flex:1;min-height:410px;padding:24px 29px;border-radius:0 0 7px 7px}
+  .project-visual{order:-1;flex:none;min-height:0;height:clamp(230px,65vw,340px);border-radius:7px 7px 0 0;clip-path:inset(-135px 0 0 0 round 7px 7px 0 0)}
+  .project-preview{top:-38px;transform:translateX(-50%) rotate(var(--preview-rotation))}
   .project-logo{width:190px;height:77px;margin-left:-18px}
   .mobile-break{display:inline}
   h3{font-size:36px}
@@ -171,7 +172,8 @@ h3:lang(en),h3 :lang(en){letter-spacing:normal}
 @media (max-width:450px){
   .nav-button{min-width:44px}
   .nav-external{font-size:0}
-  .nav-external span{font-size:14px;margin:0}
+  .nav-external span{display:none}
+  .github-icon{display:block}
   .brand-icon{width:30px;height:30px}
   .brand{font-size:16px}
   h1{font-size:clamp(44px,12.8vw,66px)}
@@ -180,7 +182,6 @@ h3:lang(en),h3 :lang(en){letter-spacing:normal}
   .project-content{min-height:440px;padding:20px 24px}
   h3{font-size:32px}
   .tag-list li{font-size:10px}
-  .project-visual{min-height:470px}
   .phone-shell{width:220px;height:440px}
   .render-window{width:82%}
 }

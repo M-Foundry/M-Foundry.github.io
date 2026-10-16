@@ -214,9 +214,20 @@ if (heroArt) {
   };
 
   heroArt.addEventListener('pointerdown', (event) => {
-    if (activePointer !== null || event.button !== 0) return;
+    if (activePointer !== null || !event.isPrimary || event.button !== 0) return;
     activePointer = event.pointerId;
-    bounds = heroArt.getBoundingClientRect();
+    let left = 0;
+    let top = 0;
+    for (let element = heroArt; element; element = element.offsetParent) {
+      left += element.offsetLeft;
+      top += element.offsetTop;
+    }
+    bounds = {
+      left: left - window.scrollX,
+      top: top - window.scrollY,
+      width: heroArt.offsetWidth,
+      height: heroArt.offsetHeight
+    };
     heroArt.setPointerCapture(event.pointerId);
     heroArt.classList.add('is-pressing');
     updatePointer(event);
@@ -227,11 +238,17 @@ if (heroArt) {
   const releasePointer = (event) => {
     if (event.pointerId !== activePointer) return;
     activePointer = null;
+    if (heroArt.hasPointerCapture(event.pointerId)) heroArt.releasePointerCapture(event.pointerId);
     heroArt.classList.remove('is-pressing');
     renderPose(0, 0);
   };
   ['pointerup', 'pointercancel', 'lostpointercapture'].forEach((type) => {
     heroArt.addEventListener(type, releasePointer);
+  });
+  ['blur', 'resize'].forEach((type) => {
+    window.addEventListener(type, () => {
+      if (activePointer !== null) releasePointer({pointerId: activePointer});
+    });
   });
 }
 
