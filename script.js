@@ -46,7 +46,7 @@ const translations = {
     themeSwitchToLight: 'Switch to light mode',
     heroFirst: 'Make',
     heroSecond: 'Something',
-    heroIntroBefore: 'M-Foundry is a collection of products by independent developer ',
+    heroIntroBefore: 'M-Foundry is a product collection by independent developer ',
     heroIntroAfter: '. Starting with MChat, it continues to grow through new software and tools as each product is developed and refined.',
     exploreProjects: 'Explore Projects',
     workTitle: 'Projects',
@@ -74,7 +74,7 @@ const translations = {
     quickStart: 'view source',
     m3lVisualAria: 'Illustration of Markdown, math, and code rendering',
     m3lScreenshotAlt: 'Screenshot of M3L rendering output',
-    description: 'M-Foundry is a collection of products by independent developer MRoldL001, including the MChat Android AI client and the M3L Markdown and LaTeX rendering library.',
+    description: 'M-Foundry is a product collection by independent developer MRoldL001, including the MChat Android AI client and the M3L Markdown and LaTeX rendering library.',
     ogDescription: 'Explore M-Foundry’s open-source products, from MChat to M3L.'
   }
 };
@@ -95,7 +95,6 @@ function setTheme(theme) {
   currentTheme = theme;
   document.documentElement.dataset.theme = theme;
   document.documentElement.style.colorScheme = theme;
-  themeToggle.textContent = theme === 'dark' ? '☀' : '☾';
   themeToggle.setAttribute('aria-label', translations[currentLanguage][theme === 'dark' ? 'themeSwitchToLight' : 'themeSwitchToDark']);
 }
 
